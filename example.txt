@@ -1,7 +1,10 @@
+
+added example.txt in feature-branch
+
 This is the original content of the file.
-<<<<<<< HEAD
+
 Changes made in feature-branch-1.
-=======
-**** Changes made in feature-branch-2. 
+
+**** Changes made in feature-branch-2.
+
 I added This line Manuallly in merge conflict editor 
->>>>>>> feature-branch-2
