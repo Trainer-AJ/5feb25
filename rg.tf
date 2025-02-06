@@ -9,6 +9,7 @@ terraform {
 
 # This creates a NEW RG 
 # REALLY 
+# gigds
 provider "azurerm" {
   features {}
   # Configuration options
