@@ -13,10 +13,11 @@ terraform {
 provider "azurerm" {
   features {}
   # Configuration options
-  client_id = "08527c67-b558XXXXXXXXXXXx"
-  client_secret   = "jbr8Q~guvvHXXXXXXXXXXXXXXXXXxn"
-  tenant_id       = "cb561bac-8XXXXXXXXXXXXXXXXX3ae"
-  subscription_id = "910fcc57-XXXXXXXXXXXXx"
+  # client_id = "YOUR-VALUES-HERE"
+  client_id = "YOUR-VALUES-HERE"
+  client_secret = "YOUR-VALUES-HERE"
+  tenant_id = "YOUR-VALUES-HERE"
+  subscription_id = "YOUR-VALUES-HERE"
   use_oidc        = true
 }
 
