@@ -1,0 +1,20 @@
+name: First Pipeline
+
+# trigger - when to RUn?
+on:
+  push:
+    branches:
+      - main
+
+# where to RUN - agent pool 
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get The COde
+      uses: actions/checkout@v4.2.2
+
+    - name: RUn a one-line Script
+      run: echo "Hello WOlrd"
+  
