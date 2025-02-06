@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+# This creates a NEW RG 
 provider "azurerm" {
   features {}
   # Configuration options
