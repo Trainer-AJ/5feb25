@@ -1,0 +1,32 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+# JOB TEMPLATE - FORM AZURE PIPELINE
+###########################################
+- template: ado-templates/job-template.yml
+##########################################
+
+- job: B
+  steps:
+    - task: AzureCLI@2
+      displayName: Terraform Plan
+      inputs:
+        azureSubscription: 'Service-Con'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'terraform init && terraform plan'
+      env: 
+        ARM_SUBSCRIPTION_ID: $(subscription-ID)
+    - task: AzureCLI@2
+      displayName: Terraform Apply
+      inputs:
+        azureSubscription: 'Service-Con'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'terraform apply --auto-approve'
+      env: 
+        ARM_SUBSCRIPTION_ID: $(subscription-ID)
+
