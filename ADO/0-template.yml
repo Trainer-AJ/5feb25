@@ -1,0 +1,22 @@
+jobs:
+- job: A
+  steps:
+  - bash: echo task1
+  - bash: echo task2
+  - bash: echo task3
+  - task: AzureKeyVault@2
+    displayName: secrets via KV
+    inputs:
+      azureSubscription: 'Service-Con'
+      KeyVaultName: 'forpipelineo3u4'
+      SecretsFilter: '*'
+      RunAsPreJob: true
+  - task: AzureCLI@2
+    displayName: Terraform init
+    inputs:
+      azureSubscription: 'Service-Con'
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'terraform init'
+    env: 
+      ARM_SUBSCRIPTION_ID: $(subscription-ID)
