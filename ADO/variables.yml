@@ -1,0 +1,30 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- name: region
+  value: East US
+
+# variable group
+- group: Project_lvl_vars
+
+steps:
+- bash: |
+        echo "System defined varaible ==> $(Build.Repository.LocalPath) "
+        ls -latr $(Build.Repository.LocalPath) 
+        echo "*****************************************"
+        echo "this is env var => $owner"
+        echo "This is pipeline var ==> $(region)" 
+        echo "This is from variable group ==> $(Owner) & $(cost-center)"    
+  env:
+    owner: AJ
+  displayName: Task1
+
+- bash: |
+       echo "This is from variable group ==> $(Owner) & $(cost-center)"    
+       echo "this is env var => $owner"
+       echo "This is pipeline var ==> $(region)"
+  displayName: Task2
