@@ -8,13 +8,17 @@ on:
 
 jobs:
 
-  build:
+  DockerImgae:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+    - name: check Pre-REq
+      run: ls -a
+      working-directory: ./Docker
+      
     - name: Build the Docker image
       run: docker build . --file dockerfile --tag my-image-name:$(date +%s)
-      working-directory: Docker
+      working-directory: ./Docker
       
