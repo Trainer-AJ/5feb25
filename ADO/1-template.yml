@@ -6,7 +6,7 @@ pool:
 jobs:
 # JOB TEMPLATE - FORM AZURE PIPELINE
 ###########################################
-- template: ado-templates/job-template.yml
+- template: ADO/0-template.yml
 ##########################################
 
 - job: B
