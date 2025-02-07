@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- name: region
+  value: East US
+
+steps:
+- bash: |
+        echo "System defined varaible"
+        ls -latr $(Build.Repository.LocalPath) 
+        echo $owner 
+        echo "Pipeline variable value ==> $(region)"     
+  env:
+    owner: AJ
+
+- bash: |
+       echo $(owner)
