@@ -19,6 +19,6 @@ jobs:
       working-directory: ./Docker
       
     - name: Build the Docker image
-      run: docker build . --file dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file dockerFile --tag my-image-name:$(date +%s)
       working-directory: ./Docker
       
