@@ -23,3 +23,9 @@ You can install the Fyne library using the following command:
 
 ```bash
 go get fyne.io/fyne/v2
+```
+
+Run:
+```
+GOOS=windows GOARCH=amd64 go build -o calculator.exe
+```
