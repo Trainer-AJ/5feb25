@@ -26,6 +26,12 @@ go get fyne.io/fyne/v2
 ```
 
 Run:
-```
+```sh
 GOOS=windows GOARCH=amd64 go build -o calculator.exe
+```
+and
+```pwsh
+$env:GOOS="windows"
+$env:GOARCH="amd64"
+go build -o calculator.exe
 ```
