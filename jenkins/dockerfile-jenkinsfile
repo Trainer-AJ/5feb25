@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Trainer-AJ/5feb25'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    def customImage = docker.build("my-image:${env.BUILD_ID}")
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Fix: Explicitly use /bin/bash and escape inner quotes properly
+                    sh 'docker run --rm my-image:${env.BUILD_ID} /bin/bash -c "cd 5feb25/Python && ./app/bin/python calculator_test.py"'
+                }
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                dir('Python') {
+                    script {
+                        sh 'zip -r python_archive.zip .'
+                    }
+                }
+            }
+        }
+    }
+}
