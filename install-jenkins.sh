@@ -1,5 +1,12 @@
 #!/bin/bash
 
+###################
+# check userdata logs:
+# cat /var/log/cloud-init.log
+# cat /var/log/cloud-init-output.log
+
+################
+
 # Update apt repositories and install OpenJDK 17
 sudo apt update -y
 sudo apt install openjdk-17-jre -y
@@ -40,4 +47,4 @@ else
 fi
 
 sudo apt install python3 -y
-sudo apt install python3-pip
+sudo apt install python3-pip -y
