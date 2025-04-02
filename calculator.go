@@ -1,5 +1,6 @@
 package main
-
+// Description: A simple calculator program in Go that performs basic arithmetic operations.
+// It takes two numbers and an operator as input from the user and outputs the result.
 import (
 	"fmt"
 	"log"
