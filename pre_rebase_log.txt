@@ -1,0 +1,5 @@
+5463371 detached-demo@{0}: rebase (finish): refs/heads/detached-demo onto 499d9aa8df7dd5498feb47c9e831fc90fb0a6478
+b1b4906 detached-demo@{1}: commit: 2
+7e2effa detached-demo@{2}: commit: 1
+fe4fbe2 detached-demo@{3}: Branch: renamed refs/heads/detached to refs/heads/detached-demo
+fe4fbe2 detached-demo@{4}: branch: Created from HEAD
